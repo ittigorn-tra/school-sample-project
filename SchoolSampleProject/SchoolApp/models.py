@@ -4,8 +4,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class School(models.Model):
     school_name = models.CharField(max_length=20)
-    max_student_count = models.IntegerField(
-        default=1,
+    student_count = models.IntegerField(
+        default=0,
         validators=[
             MaxValueValidator(50),
             MinValueValidator(0)
