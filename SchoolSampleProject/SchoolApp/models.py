@@ -1,20 +1,20 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MinValueValidator
 
 
-class School(models.Model):
+class Schools(models.Model):
+    school_id = models.AutoField(primary_key=True)
     school_name = models.CharField(max_length=20)
-    student_count = models.IntegerField(
-        default=0,
+    max_student = models.IntegerField(
+        default=50,
         validators=[
-            MaxValueValidator(50),
             MinValueValidator(0)
         ]
     )
 
 
-class Student(models.Model):
-    school = models.ForeignKey(School, on_delete=models.CASCADE)
-    student_id = models.CharField(max_length=20)
+class Students(models.Model):
+    school = models.ForeignKey(Schools, on_delete=models.CASCADE)
+    student_id = models.CharField(max_length=20, primary_key=True)
     name_first = models.CharField(max_length=20)
     name_last = models.CharField(max_length=20)
