@@ -3,6 +3,9 @@ from SchoolApp import views
 
 
 urlpatterns = [
-    path('school/', views.schoolApi),
-    re_path(r'^school/([0-9]+)$', views.schoolApi),
+    path('schools', views.schoolApi),
+    re_path(r'^schools/([0-9]+)$', views.schoolApi),
+
+    path('students', views.studentApi),
+    re_path(r'^students/(\w{1,20})$', views.studentApi),
 ]

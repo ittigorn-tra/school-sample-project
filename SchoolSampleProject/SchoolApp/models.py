@@ -14,7 +14,7 @@ class Schools(models.Model):
 
 
 class Students(models.Model):
-    school = models.ForeignKey(Schools, on_delete=models.CASCADE)
+    school_id = models.ForeignKey(Schools, on_delete=models.CASCADE)
     student_id = models.CharField(max_length=20, primary_key=True)
     name_first = models.CharField(max_length=20)
     name_last = models.CharField(max_length=20)
