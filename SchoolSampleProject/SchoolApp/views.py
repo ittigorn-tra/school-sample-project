@@ -64,7 +64,7 @@ def schoolApi(request, id=None):
     elif request.method == 'DELETE':
         existing_school = None
         try:
-            existing_school = Schools.objects.get(school_id=school_data['school_id'])
+            existing_school = Schools.objects.get(school_id=id)
         except Schools.DoesNotExist:
             return JsonResponse(data={'detail': 'School with the given ID cannot be found'}, status=status.HTTP_404_NOT_FOUND)
         existing_school.delete()
