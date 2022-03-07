@@ -132,3 +132,12 @@ def studentApi(request, id=None):
             return JsonResponse(data={'detail': 'Student with the given ID cannot be found'}, status=status.HTTP_404_NOT_FOUND)
         existing_student.delete()
         return JsonResponse(data={'detail': 'Deleted successfully'}, safe=False)
+
+
+@csrf_exempt
+@api_view(['GET'])
+@renderer_classes((TemplateHTMLRenderer, JSONRenderer))
+def schoolStudentsApi(request, id=None):
+    students = Students.objects.filter(school_id=id).all()
+    students_serializer = StudentSerializer(students, many=True)
+    return JsonResponse(students_serializer.data, safe=False)
