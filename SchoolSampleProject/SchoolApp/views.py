@@ -52,6 +52,14 @@ def schoolApi(request, id=None):
         school_data = JSONParser().parse(request)
         if 'school_id' not in school_data:
             return JsonResponse(data={'detail': '"school_id" is required in the payload'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # check if school exceeds maximum capacity if updated
+        if 'max_student' in school_data:
+            school = Schools.objects.get(school_id=school_data['school_id'])
+            students_in_this_school = Students.objects.filter(school_id=school_data['school_id']).count()
+            if students_in_this_school > school_data['max_student']:
+                return JsonResponse(data={'detail': 'Cannot adjust "max_student" to be lower than the existing student count'}, status=status.HTTP_409_CONFLICT)
+
         existing_school = None
         try:
             existing_school = Schools.objects.get(school_id=school_data['school_id'])

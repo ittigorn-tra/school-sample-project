@@ -53,7 +53,9 @@ This is my school-student sample project built with Django and PostgreSQL for a 
    </td>
    <td>int
    </td>
-   <td>
+   <td>Auto Increment
+<p>
+Primary Key
    </td>
   </tr>
   <tr>
@@ -102,6 +104,8 @@ This is my school-student sample project built with Django and PostgreSQL for a 
    <td>str
    </td>
    <td>Max length 20
+<p>
+Primary Key
    </td>
   </tr>
   <tr>
@@ -334,9 +338,9 @@ Path : /schools
    </td>
    <td>Content-Type
    </td>
-   <td>
+   <td>str
    </td>
-   <td>
+   <td>application/json
    </td>
   </tr>
   <tr>
@@ -376,6 +380,260 @@ Path : /schools
 
 <pre class="prettyprint">{
     "detail": "Added successfully"
+}</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+#### Update School
+
+Path : /schools
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>PATCH
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>Content-Type
+   </td>
+   <td>str
+   </td>
+   <td>application/json
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "school_id":int,
+    "school_name" : Optional[str],
+    "max_student" : Optional[int]
+}</pre>
+
+
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "detail": "Updated successfully"
+}</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+#### Update School
+
+Path : /schools
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>PATCH
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>Content-Type
+   </td>
+   <td>str
+   </td>
+   <td>application/json
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "school_id":int,
+    "school_name" : Optional[str],
+    "max_student" : Optional[int]
+}</pre>
+
+
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "detail": "Updated successfully"
+}</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+#### Delete School
+
+Path : /schools/{SCHOOL_ID}
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>DELETE
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td colspan="3" >
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "detail": "Deleted successfully"
 }</pre>
 
 
