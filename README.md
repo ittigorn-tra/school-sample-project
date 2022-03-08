@@ -19,17 +19,25 @@ This is my school-student sample project built with Django and PostgreSQL for a 
 ## Setting Up
 
 
+### Setting up python environment
 
-1. Setting up python environment
-    1. At project root directory, run `pipenv install`
-2. Setting up a database
-    2. Install postgresql on your machine
-    3. For the benefit of easy development environment set up, create a database username with credential as follows:
-        1. Username : ittigorn
-        2. Password : password
-    4. Create a database named “school_sample_project”
-3. Migrate
-    5. In SchoolSampleProject directory, run \
+At project root directory, run `pipenv install`
+
+
+### Setting up a database
+
+
+
+1. Install postgresql on your machine
+2. For the benefit of easy development environment set up, create a database username with credential as follows:
+    1. Username : ittigorn
+    2. Password : password
+3. Create a database named “school_sample_project”
+
+
+### Migrate
+
+In SchoolSampleProject directory, run \
 ```python manage.py migrate SchoolApp```
 
 
