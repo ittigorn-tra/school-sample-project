@@ -121,6 +121,14 @@ def studentApi(request, id=None):
         student_data = JSONParser().parse(request)
         if 'student_id' not in student_data:
             return JsonResponse(data={'detail': '"student_id" is required in the payload'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # check if school at maximum capacity
+        if 'school_id' in student_data:
+            school = Schools.objects.get(school_id=student_data['school_id'])
+            students_in_this_school = Students.objects.filter(school_id=student_data['school_id']).count()
+            if (students_in_this_school + 1) > school.max_student:
+                return JsonResponse(data={'detail': 'This school is at its maximum capacity'}, status=status.HTTP_409_CONFLICT)
+
         existing_student = None
         try:
             existing_student = Students.objects.get(student_id=student_data['student_id'])

@@ -221,6 +221,94 @@ Path : /schools
 
 
 
+#### List Students in School
+
+Path : /schools/{SCHOOL_ID}/students
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>GET
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">[
+    {
+        "school_id": int,
+        "student_id": str,
+        "name_first": str,
+        "name_last": str
+    },
+    …
+]</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
 #### Get School by ID
 
 Path : /schools/{SCHOOL_ID}
@@ -477,9 +565,348 @@ Path : /schools
 
 
 
-#### Update School
+#### Delete School
 
-Path : /schools
+Path : /schools/{SCHOOL_ID}
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>DELETE
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td colspan="3" >
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "detail": "Deleted successfully"
+}</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+### Student Endpoints
+
+
+#### List Students
+
+Path : /students
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>GET
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">[
+    {
+        "school_id": int,
+        "student_id": str,
+        "name_first": str,
+        "name_last": str
+    },
+    …
+]</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+#### Get Student by ID
+
+Path : /students/{STUDENT_ID}
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>GET
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td colspan="3" >
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "school_id": int,
+    "student_id": str,
+    "name_first": str,
+    "name_last": str
+}</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+#### Add Student
+
+Path : /students
+
+
+<table>
+  <tr>
+   <td>Method
+   </td>
+   <td>
+   </td>
+   <td>Key
+   </td>
+   <td>Type
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>POST
+   </td>
+   <td>URL Parameters
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Header
+   </td>
+   <td>Content-Type
+   </td>
+   <td>str
+   </td>
+   <td>application/json
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Payload
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "school_id": int,
+    "student_id": str,
+    "name_first": str,
+    "name_last": str
+}</pre>
+
+
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful HTTP status code
+   </td>
+   <td colspan="3" >200
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>Successful Response
+   </td>
+   <td colspan="3" >
+
+
+
+<pre class="prettyprint">{
+    "detail": "Added successfully"
+}</pre>
+
+
+   </td>
+  </tr>
+</table>
+
+
+
+#### Update Student
+
+Path : /students
 
 
 <table>
@@ -529,9 +956,10 @@ Path : /schools
 
 
 <pre class="prettyprint">{
-    "school_id":int,
-    "school_name" : Optional[str],
-    "max_student" : Optional[int]
+    "school_id": Optional[int],
+    "student_id": str,
+    "name_first": Optional[str],
+    "name_last": Optional[str]
 }</pre>
 
 
@@ -565,9 +993,9 @@ Path : /schools
 
 
 
-#### Delete School
+#### Delete Student
 
-Path : /schools/{SCHOOL_ID}
+Path : /students/{STUDENT_ID}
 
 
 <table>
